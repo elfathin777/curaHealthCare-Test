@@ -8,6 +8,14 @@ describe ('History Page Cura Healtcare', () =>{
         loginPage.login('John Doe', 'ThisIsNotAPassword')
     })
 
+    afterEach(function () {
+        // cek kalau testnya PASSED → ambil screenshot
+        if (this.currentTest.state === 'passed') {
+            cy.screenshot(`success-${this.currentTest.title}`, { capture: 'fullPage' });
+        }
+        // kalau gagal → biarkan Cypress otomatis simpan video
+    });
+
     it ('TC.Hist.001 - The user successfully views the details of an appointment on the history page.', () => {
         appointmentPage.setSelectFacility('Tokyo CURA Healthcare Center');
         appointmentPage.setApplyReadmission();

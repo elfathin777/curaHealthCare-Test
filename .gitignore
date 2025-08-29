@@ -1,0 +1,22 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Cypress output
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE/editor
+.vscode/
+.idea/
+
+# Environment & secrets
+.env

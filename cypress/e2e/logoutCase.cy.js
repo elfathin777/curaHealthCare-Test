@@ -8,6 +8,12 @@ describe ("Automation logout", () => {
         loginPage.login('John Doe', 'ThisIsNotAPassword')
     })
 
+    afterEach(function () {
+        if (this.currentTest.state === 'passed') {
+            cy.screenshot(`success-${this.currentTest.title}`, { capture: 'fullPage' });
+        }
+    });
+
     it ("logout dengan automation ", () => {
         logoutPage.logout();
 

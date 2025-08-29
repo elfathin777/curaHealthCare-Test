@@ -10,6 +10,12 @@ describe('Cura Health Care Automtaion Test for Login Case', () => {
     cy.wait(2000);
   })
 
+  afterEach(function () {
+        if (this.currentTest.state === 'passed') {
+            cy.screenshot(`success-${this.currentTest.title}`, { capture: 'fullPage' });
+        }
+    });
+
   it('TC.Log.001 - user login with valid username and valid password', () => {
     loginPage.login('John Doe', 'ThisIsNotAPassword');
     cy.get('h2').should('contain', 'Make Appointment');

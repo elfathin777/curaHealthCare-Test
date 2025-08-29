@@ -8,6 +8,12 @@ describe('Automation Test for Make Appointment Case', () => {
         loginPage.login('John Doe', 'ThisIsNotAPassword');
     });
 
+    afterEach(function () {
+        if (this.currentTest.state === 'passed') {
+            cy.screenshot(`success-${this.currentTest.title}`, { capture: 'fullPage' });
+        }
+    });
+
     it('TC.APP.001 - should be able to make an appointment successfully', () => {
         // Menggunakan metode dari objek AppointmentPage
         appointmentPage.setSelectFacility('Tokyo CURA Healthcare Center');
