@@ -29,8 +29,8 @@ This project leverages **Cypress.io** to deliver **robust, end-to-end testing** 
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/elfathin777/curaHealthCare-Test.git
+cd curaHealthCare-Test
 npm install
 ```
 
